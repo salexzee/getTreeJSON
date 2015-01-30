@@ -4,7 +4,7 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     var name = treehouse.name; /* Gets your actual name */
     var profile = treehouse.profile_name; /* Gets your user name */
     var url = treehouse.profile_url; /* Gets your profile URL */
-    var badges = treehouse.badges; /* Gets all of your badges */
+    var badges = treehouse.badges; /* REQUIRED! Gets all of your badges */
     var gravatar_url = treehouse.gravatar_url; /* Gets your gravatar URL */
     var gravatar_hash = treehouse.gravatar_hash; /* Gets your gravatar hash / console.log this if you want to see what it is.*/
     
@@ -15,7 +15,7 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     
     var badge_count = badges.length; /* Gets how many badges you have */
     var badge_first = badges[0]; /* Set this to any number below the badge_count. Used below */
-    var set_badge = badges[50]; /* Gets you a specific badge based on the number you specify */
+    var set_badge = badges[50]; /* REQUIRED! Gets you a specific badge based on the number you specify */
     var badge_last = badges[badge_count - 1]; /* Gets the last badge no matter how many you have */
     var badge_id = set_badge.id; /* Gets selected badge ID number. Can replace set_badge with badge_first or badge_last. */
     var badge_icon = set_badge.icon_url; /* Gets the URL for the badge icon image. Can replace set_badge with badge_first or badge_last. */
