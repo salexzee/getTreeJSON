@@ -17,9 +17,9 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     var badge_first = badges[0]; /* Set this to any number below the badge_count. Used below */
     var set_badge = badges[50]; /* Gets you a specific badge based on the number you specify */
     var badge_last = badges[badge_count - 1]; /* Gets the last badge no matter how many you have */
-    var badge_id = badges[set_badge or badge_last or any number below badge count].id; /* Gets selected badge ID number */
-    var badge_icon = badges[set_badge or badge_last or any number below badge count].icon_url; /* Gets the URL for the badge icon image */
-    var badge_date = badges[set_badge or badge_last or any number below badge count].earned_date; /* Gets the date that you earned the badge */
+    var badge_id = set_badge.id; /* Gets selected badge ID number. Can replace set_badge with badge_first or badge_last. */
+    var badge_icon = set_badge.icon_url; /* Gets the URL for the badge icon image. Can replace set_badge with badge_first or badge_last. */
+    var badge_date = set_badge.earned_date; /* Gets the date that you earned the badge. Can replace set_badge with badge_first or badge_last. */
     
     /* DEALING WITH COURSES */
     /* Some badges have their associated courses */
@@ -29,8 +29,8 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     var courses = set_badge.courses; /* Pulls all courses for a given badge */
     var course_count = courses.length; /* Gets the amount of courses required for that badge */
     var first_course = courses[0]; /* Gets the first course in the list */
-    var last_course = course[course_count -1]; /* Gets the last course in the list */
-    var set_course = courses[2]; /* Gets one of the courses based on your input */
+    var last_course = courses[course_count - 1]; /* Gets the last course in the list */
+    var set_course = courses[0]; /* Gets one of the courses based on your input */
     var course_title = set_course.title; /* Gets the title of the course you set */
     var course_url = set_course.url; /* Gets the URL of the course you set */
     var course_badge_count = set_course.badge_count; /* Gets the badge count of the course you set */
@@ -51,6 +51,6 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     var dev_tools = points["Development Tools"];
     var business = points.Business;
     var python = points.Python;
-    var java = points.java;
+    var java_points = points.java;
     var digital_lit = points["Digital Literacy"];
 });
