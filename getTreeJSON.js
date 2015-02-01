@@ -1,5 +1,5 @@
-/* In the getJSON function, change the username from samuelwebb to whatever your Treehouse username is. */
-$.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
+/* In the getJSON function, change the username from "username" to whatever your Treehouse username is. */
+$.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
     /* CREATING MAIN VARIABLES */
     var name = treehouse.name; /* Gets your actual name */
     var profile = treehouse.profile_name; /* Gets your user name */
@@ -53,4 +53,11 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     var python = points.Python;
     var java_points = points.java;
     var digital_lit = points["Digital Literacy"];
+
+/* ------------------------------------------------ */
+    /* PLACE YOUR CODE BELOW THIS LINE */
+
+
+
+    /* PLACE YOUR CODE ABOVE THIS LINE */
 });
