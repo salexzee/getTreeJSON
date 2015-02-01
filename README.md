@@ -40,14 +40,14 @@ Examples
 
 Examples are all used in the section that is for users to place their own code.
 
-*Showing The Current Profile Name (Example 1)*
+**Showing The Current Profile Name (Example 1)**
 
 ```
 $("header").html("<h1>Welcome to the profile of " + name + "!</h1>" +
 "<h3>" + name + "'s username is " + profile + ".</h3>");
 ```
 
-This code will provide a welcoming H1 using the real name of the user and in the H3 it'll provide you with their username name.
+*This code will provide a welcoming H1 using the real name of the user and in the H3 it'll provide you with their username name.*
 
 
 Dependencies
