@@ -29,8 +29,7 @@ set_badge = badges[badge_number];
 
 Replace the "X" with whichever badge you'd like to get. By using the badge_number variable, you'll be able to use a bunch of functions with *set_badge*, but you'll just have to change the number in the *badge_number* variable.
 
-If you look at the code under the "DEALING WITH BADGES" section of the code, you'll notice there are 3 variables set using the *set_badge* variable. You can change these from *set_badge* to either *badge_first* or *badge_last* if you want to get the beginning or ending badge. Eample (3) shows a good reason to use *badge_last* or *badge_first*.
-
+If you look at the code under the "DEALING WITH BADGES" section of the code, you'll notice there are 3 variables set using the *set_badge* variable. You can change these from *set_badge* to either *badge_first* or *badge_last* if you want to get the beginning or ending badge.
 
 
 Gist included [HERE!](https://gist.github.com/salexzee/71af99b14c25c78e33ba) if you just want to copy and paste this into your own JS file.
@@ -57,7 +56,9 @@ function listBadge(start, end, badges){
 	foreach(badge in badges) {
 		if (badge_position >= start && badge_position <= end) {
 			$("ul").add("<li>" + badge.name + "</li>");
-		} 
+		} else if (badge_position > end) {
+			Return;
+		}
 		badge_position += 1;
 	}
 }
@@ -66,6 +67,27 @@ listBadge(3,10,badges);
 ```
 
 *This code will list the badge names from the badge at position 3, to the badge at position 10 in the badges array. It basically looks for the first UL element and inside of that, LI elements are created, each containing a badge name.*
+
+**Grab Last 4 Badges and Show Icon(Example 3)**
+
+```
+function lastBadges(badges, amount){
+	badges = badges.reverse();
+	badge_position = 0;
+	foreach(badge in badges) {
+		if (badge_position === amount) {
+			Return;
+		} else {
+			$("ul").add('<li><img src="' + badge.icon_url + '" alt="' + badge.name +'"></li>');
+		}
+		badge_position += 1;
+	}
+}
+
+lastBadges(badges,4);
+```
+
+*This code will list out the icons of the last 4 badges.*
 
 
 Dependencies
