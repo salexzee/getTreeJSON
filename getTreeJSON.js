@@ -18,6 +18,7 @@ $.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
     var set_badge = badges[50]; /* REQUIRED! Gets you a specific badge based on the number you specify */
     var badge_last = badges[badge_count - 1]; /* Gets the last badge no matter how many you have */
     var badge_id = set_badge.id; /* Gets selected badge ID number. Can replace set_badge with badge_first or badge_last. */
+    var badge_name = set_badge.name; /* Gets selecte badge name. Can replace set_badge with badge_first or badge_last. */
     var badge_icon = set_badge.icon_url; /* Gets the URL for the badge icon image. Can replace set_badge with badge_first or badge_last. */
     var badge_date = set_badge.earned_date; /* Gets the date that you earned the badge. Can replace set_badge with badge_first or badge_last. */
     
