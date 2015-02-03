@@ -49,6 +49,24 @@ $("header").html("<h1>Welcome to the profile of " + name + "!</h1>" +
 
 *This code will provide a welcoming H1 using the real name of the user and in the H3 it'll provide you with their username name.*
 
+**Listing Out Badges (Example 2)**
+
+```
+function listBadge(start, end, badges){
+	var badge_position = 0;
+	foreach(badge in badges) {
+		if (badge_position >= start && badge_position <= end) {
+			$("ul").add("<li>" + badge.name + "</li>");
+		} 
+		badge_position += 1;
+	}
+}
+
+listBadge(3,10,badges);
+```
+
+*This code will list the badge names from the badge at position 3, to the badge at position 10 in the badges array. It basically looks for the first UL elenemt and inside of that LI elements are created, each containing a badge name.*
+
 
 Dependencies
 -----------
