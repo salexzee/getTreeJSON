@@ -65,7 +65,7 @@ function listBadge(start, end, badges){
 listBadge(3,10,badges);
 ```
 
-*This code will list the badge names from the badge at position 3, to the badge at position 10 in the badges array. It basically looks for the first UL elenemt and inside of that LI elements are created, each containing a badge name.*
+*This code will list the badge names from the badge at position 3, to the badge at position 10 in the badges array. It basically looks for the first UL element and inside of that, LI elements are created, each containing a badge name.*
 
 
 Dependencies
