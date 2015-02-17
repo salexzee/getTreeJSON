@@ -5,7 +5,7 @@ To use this project, navigate into the javascript folder of your current project
 
 `git clone https://github.com/salexzee/getTreeJSON.git`
 
-This will clone the project into your javascript folder. Now, link *gitTreeJSON.js* into your HTML page. Make sure you also have jQuery linked before the gitTreeJSON. It should look something like this:
+This will clone the project into your javascript folder. Now, link *gitTreeJSON.js* into your HTML page. Make sure you also have jQuery linked **BEFORE** the gitTreeJSON. It should look something like this:
 
 ```
 	<script src="javascript/jquery.js"></script>
