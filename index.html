@@ -75,17 +75,10 @@ set_badge = badges[badge_number];
 <p><strong>Listing Out Badges (Example 2)</strong></p>
 
 <pre><code>function listBadge(start, end, badges){
-    var badge_position = 0;
-    foreach(badge in badges) {
-        if (badge_position &gt;= start &amp;&amp; badge_position &lt;= end) {
-            $("ul").add("&lt;li&gt;" + badge.name + "&lt;/li&gt;");
-        } else if (badge_position &gt; end) {
-            Return;
-        }
-        badge_position += 1;
+    for(var i = start - 1; i &lt; end; i++) {
+        $("ul").prepend("&lt;li&gt;" + badges[i].name + "&lt;/li&gt;");
     }
 }
-
 listBadge(3,10,badges);
 </code></pre>
 

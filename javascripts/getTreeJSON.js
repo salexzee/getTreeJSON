@@ -72,3 +72,19 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     /* PLACE YOUR CODE ABOVE THIS LINE */
 
 });
+
+
+
+
+function listBadge(start, end, badges){
+    for(var i = start - 1; i < end; i++) {
+        $("ul").prepend("<li>" + badge.name + "</li>");
+    }
+}
+listBadge(3,10,badges);
+
+
+
+
+
+
