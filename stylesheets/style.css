@@ -1,0 +1,29 @@
+#profile-name:hover {
+	background: rgb(243,246,250);
+	border: 1px solid rgb(220, 230, 240);
+}
+
+#profile-name {
+	padding-left: 20px;
+	border-radius: 5px;
+	border: 1px solid transparent;
+}
+
+#profile-name h1 {
+	margin-bottom: 0;
+}
+
+#profile-name h3 {
+	margin-top: 10px;
+}
+
+#last-four {
+	list-style: none;
+	display: inline-block;
+}
+
+.badge-image {
+	width: 100px;
+	display: inline-block;
+	margin-right: 10px;
+}

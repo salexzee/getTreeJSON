@@ -1,5 +1,5 @@
 /* In the getJSON function, change the username from "username" to whatever your Treehouse username is. */
-$.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
+$.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     /* CREATING MAIN VARIABLES */
     var name = treehouse.name; /* Gets your actual name */
     var profile = treehouse.profile_name; /* Gets your user name */
@@ -59,5 +59,17 @@ $.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
     /* PLACE YOUR CODE BELOW THIS LINE */
 
 
+    function lastBadges(badges, amount){
+        badges = badges.reverse();
+        for(var i = 0; i < amount; i++) {
+            $("#last-four").prepend('<div class="badge-image"<li><img src="' + badges[i].icon_url + '" alt="' + badges[i].name +'"></li></div>');
+        }
+    }
+    lastBadges(badges, 4)
+
+    $("#profile-name").html("<h1>Welcome to the profile of " + name + "!</h1>" +
+"<h3>" + name + "'s username is " + profile + ".</h3>");
 
     /* PLACE YOUR CODE ABOVE THIS LINE */
+
+});

@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
     <section class="page-header">
@@ -19,8 +20,8 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="gettreejson" class="anchor" href="#gettreejson" aria-hidden="true"><span class="octicon octicon-link"></span></a>GetTreeJSON.</h3>
+      <h1>
+<a id="gettreejson" class="anchor" href="#gettreejson" aria-hidden="true"><span class="octicon octicon-link"></span></a>GetTreeJSON</h1>
 
 <p>For all of you Team Treehouse students out there, did you know that you can access all of your badges, points and more using JSON? That's right, you can and I'm here to make the process SUPER SIMPLE for you.</p>
 
@@ -56,8 +57,8 @@ set_badge = badges[badge_number];
 
 <p>Gist included <a href="https://gist.github.com/salexzee/71af99b14c25c78e33ba">HERE!</a> if you just want to copy and paste this into your own JS file.</p>
 
-<h2>
-<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+<h1>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h1>
 
 <p>Examples are all used in the section that is for users to place their own code.</p>
 
@@ -68,6 +69,8 @@ set_badge = badges[badge_number];
 </code></pre>
 
 <p><em>This code will provide a welcoming H1 using the real name of the user and in the H3 it'll provide you with their username name.</em></p>
+
+<div id="profile-name"></div>
 
 <p><strong>Listing Out Badges (Example 2)</strong></p>
 
@@ -91,17 +94,12 @@ listBadge(3,10,badges);
 <p><strong>Grab Last 4 Badges and Show Icon(Example 3)</strong></p>
 
 <pre><code>function lastBadges(badges, amount){
-    badges = badges.reverse();
-    badge_position = 0;
-    foreach(badge in badges) {
-        if (badge_position === amount) {
-            Return;
-        } else {
-            $("ul").add('&lt;li&gt;&lt;img src="' + badge.icon_url + '" alt="' + badge.name +'"&gt;&lt;/li&gt;');
+        badges = badges.reverse();
+        for(var i = 0; i < amount; i++) {
+            $("#last-four").prepend('&lt;div&gt;&lt;li&gt;&lt;img src="' + badge.icon_url + '"
+            alt="' + badge.name +'"&gt;&lt;/li&gt;&lt;/div&gt;'));
         }
-        badge_position += 1;
     }
-}
 
 lastBadges(badges,4);
 </code></pre>
