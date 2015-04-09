@@ -61,4 +61,3 @@ $.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
 
 
     /* PLACE YOUR CODE ABOVE THIS LINE */
-});
