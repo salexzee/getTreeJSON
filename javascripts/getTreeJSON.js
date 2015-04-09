@@ -57,7 +57,13 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
 
 /* ------------------------------------------------ */
     /* PLACE YOUR CODE BELOW THIS LINE */
-
+    function leadImage(badges){
+        var badge = [3, 5, 15, 30, 50, 22, 13, 34, 12, 42];
+        for (var i = 0; i < 10; i++) {
+            $(".lead-image").prepend('<div><img src="' + badges[badge[i]].icon_url + '" alt="' + badges[badge[i]].name + '" title="' + badges[badge[i]].name +'"></div>');
+        }
+    }
+    leadImage(badges)
 
     function lastBadges(badges, amount){
         badges = badges.reverse();
@@ -75,6 +81,8 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     listBadge(3,10,badges);
 
     $("#profile-name").html("<h1>Welcome to the profile of " + name + "!</h1>" + "<h3>" + name + "'s username is " + profile + ".</h3>");
+
+
 
     /* PLACE YOUR CODE ABOVE THIS LINE */
 

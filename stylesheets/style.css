@@ -1,3 +1,23 @@
+#header-image {
+	width: 150px;
+	display: inline-block;
+}
+
+#lead-text {
+	display: inline-block;
+}
+
+.lead-image{
+	display: inline;
+	margin-left: 20px;
+}
+
+.lead-image div {
+	display: inline-block;
+	width: 35px;
+	margin-right: 10px;
+}
+
 #profile-name:hover {
 	background: rgb(243,246,250);
 	border: 1px solid rgb(220, 230, 240);
