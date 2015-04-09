@@ -17,6 +17,10 @@
 	margin-top: 10px;
 }
 
+#badge-name-list {
+	margin-bottom: 30px;
+}
+
 #last-four {
 	list-style: none;
 	display: inline-block;

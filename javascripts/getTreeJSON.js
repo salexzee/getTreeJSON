@@ -15,7 +15,7 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     
     var badge_count = badges.length; /* Gets how many badges you have */
     var badge_first = badges[0]; /* Set this to any number below the badge_count. Used below */
-    var set_badge = badges[50]; /* REQUIRED! Gets you a specific badge based on the number you specify */
+    var set_badge = badges[1]; /* REQUIRED! Gets you a specific badge based on the number you specify */
     var badge_last = badges[badge_count - 1]; /* Gets the last badge no matter how many you have */
     var badge_id = set_badge.id; /* Gets selected badge ID number. Can replace set_badge with badge_first or badge_last. */
     var badge_name = set_badge.name; /* Gets selecte badge name. Can replace set_badge with badge_first or badge_last. */
@@ -67,6 +67,13 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     }
     lastBadges(badges, 4)
 
+    function listBadge(start, end, badges){
+        for(var i = start - 1; i < end; i++) {
+            $("#badge-name-list").prepend("<li>" + badges[i].name + "</li>");
+        }
+    }
+    listBadge(3,10,badges);
+
     $("#profile-name").html("<h1>Welcome to the profile of " + name + "!</h1>" + "<h3>" + name + "'s username is " + profile + ".</h3>");
 
     /* PLACE YOUR CODE ABOVE THIS LINE */
@@ -76,12 +83,7 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
 
 
 
-function listBadge(start, end, badges){
-    for(var i = start - 1; i < end; i++) {
-        $("ul").prepend("<li>" + badge.name + "</li>");
-    }
-}
-listBadge(3,10,badges);
+
 
 
 
