@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>GetTreeJSON by salexzee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">GetTreeJSON</h1>
+      <h2 class="project-tagline">A simplified way for you to connect with the Treehouse user JSON files.</h2>
+      <a href="https://github.com/salexzee/getTreeJSON" class="btn">View on GitHub</a>
+      <a href="https://github.com/salexzee/getTreeJSON/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/salexzee/getTreeJSON/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="gettreejson" class="anchor" href="#gettreejson" aria-hidden="true"><span class="octicon octicon-link"></span></a>GetTreeJSON.</h3>
+
+<p>For all of you Team Treehouse students out there, did you know that you can access all of your badges, points and more using JSON? That's right, you can and I'm here to make the process SUPER SIMPLE for you.</p>
+
+<p><em>Disclaimer: I'm going to assume that you already know how to put together a simple HTML website with some CSS and minimal Javascript.</em></p>
+
+<p>To use this project, navigate into the javascript folder of your current project using your terminal. Once there, paste in the following command:</p>
+
+<p><code>git clone https://github.com/salexzee/getTreeJSON.git</code></p>
+
+<p>This will clone the project into your javascript folder. Now, link <em>gitTreeJSON.js</em> into your HTML page. Make sure you also have jQuery linked <strong>BEFORE</strong> the gitTreeJSON file. It should look something like this:</p>
+
+<pre><code>    &lt;script src="javascript/jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="javascript/getTreeJSON/getTreeJSON.js"&gt;&lt;/script&gt;
+    &lt;script src="javascript/yourJS.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>The first thing you need to do is look at the first line of the code. Make sure you change the username from "username" to whatever user you're trying to get the stats of.</p>
+
+<p>In <em>getTreeJSON.js</em> is where you'll be putting all the code that interacts with the Treehouse profile JSON files. Open the file and scroll to the bottom. You will see a comment that says, "Place your code below this line." When we get to the examples section, this is the place all that code will be located. Make sure you're keeping your code inside of that closing curly brace.</p>
+
+<p><strong>Badges</strong></p>
+
+<p>There are 3 variables used to decide which badge you'll be working with at any given time. These are: <em>set_badge</em>, <em>badge_first</em> and <em>badge_last</em>. The <em>set_badge</em> variable is the only one that needs to be set by the user. This variable is set to your 49th badge at location 50 in the badges array. Remember, when working with arrays, they're 0 based so if you want the 10th item, you'll need to use a key of 11. To set the <em>set_badges</em> variable, use the following code:</p>
+
+<pre><code>var badge_number = X;
+set_badge = badges[badge_number];
+</code></pre>
+
+<p>Replace the "X" with whichever badge you'd like to get. By using the badge_number variable, you'll be able to use a bunch of functions with <em>set_badge</em>, but you'll just have to change the number in the <em>badge_number</em> variable.</p>
+
+<p>If you look at the code under the "DEALING WITH BADGES" section of the code, you'll notice there are 3 variables set using the <em>set_badge</em> variable. You can change these from <em>set_badge</em> to either <em>badge_first</em> or <em>badge_last</em> if you want to get the beginning or ending badge.</p>
+
+<p>Gist included <a href="https://gist.github.com/salexzee/71af99b14c25c78e33ba">HERE!</a> if you just want to copy and paste this into your own JS file.</p>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Examples are all used in the section that is for users to place their own code.</p>
+
+<p><strong>Showing The Current Profile Name (Example 1)</strong></p>
+
+<pre><code>$("header").html("&lt;h1&gt;Welcome to the profile of " + name + "!&lt;/h1&gt;" +
+"&lt;h3&gt;" + name + "'s username is " + profile + ".&lt;/h3&gt;");
+</code></pre>
+
+<p><em>This code will provide a welcoming H1 using the real name of the user and in the H3 it'll provide you with their username name.</em></p>
+
+<p><strong>Listing Out Badges (Example 2)</strong></p>
+
+<pre><code>function listBadge(start, end, badges){
+    var badge_position = 0;
+    foreach(badge in badges) {
+        if (badge_position &gt;= start &amp;&amp; badge_position &lt;= end) {
+            $("ul").add("&lt;li&gt;" + badge.name + "&lt;/li&gt;");
+        } else if (badge_position &gt; end) {
+            Return;
+        }
+        badge_position += 1;
+    }
+}
+
+listBadge(3,10,badges);
+</code></pre>
+
+<p><em>This code will list the badge names from the badge at position 3, to the badge at position 10 in the badges array. It basically looks for the first UL element and inside of that, LI elements are created, each containing a badge name.</em></p>
+
+<p><strong>Grab Last 4 Badges and Show Icon(Example 3)</strong></p>
+
+<pre><code>function lastBadges(badges, amount){
+    badges = badges.reverse();
+    badge_position = 0;
+    foreach(badge in badges) {
+        if (badge_position === amount) {
+            Return;
+        } else {
+            $("ul").add('&lt;li&gt;&lt;img src="' + badge.icon_url + '" alt="' + badge.name +'"&gt;&lt;/li&gt;');
+        }
+        badge_position += 1;
+    }
+}
+
+lastBadges(badges,4);
+</code></pre>
+
+<p><em>This code will list out the icons of the last 4 badges.</em></p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>jQuery</li>
+</ul>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/salexzee/getTreeJSON">GetTreeJSON</a> is maintained by <a href="https://github.com/salexzee">salexzee</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
