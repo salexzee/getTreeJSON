@@ -68,7 +68,7 @@ $.getJSON("http://teamtreehouse.com/samuelwebb.json",function(treehouse){
     function lastBadges(badges, amount){
         badges = badges.reverse();
         for(var i = 0; i < amount; i++) {
-            $("#last-four").prepend('<div class="badge-image"<li><img src="' + badges[i].icon_url + '" alt="' + badges[i].name +'" title ="' + badges[i].name + '"></li></div>');
+            $("#last-four").prepend('<div class="badge-image"<li><a href="http://referrals.trhou.se/samuelwebb"><img src="' + badges[i].icon_url + '" alt="' + badges[i].name +'" title ="' + badges[i].name + '"></a></li></div>');
         }
     }
     lastBadges(badges, 4)

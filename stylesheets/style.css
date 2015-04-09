@@ -1,3 +1,7 @@
+.plain:hover {
+	text-decoration: none;
+}
+
 #header-image {
 	width: 150px;
 	display: inline-block;
