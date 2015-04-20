@@ -46,7 +46,7 @@ $.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
     var javascript = points.Javascript;
     var ruby = points.Ruby;
     var php = points.PHP;
-    var wordpress = points.Wordpress;
+    var wordpress = points.WordPress;
     var ios = points.iOS;
     var android = points.Android;
     var dev_tools = points["Development Tools"];
