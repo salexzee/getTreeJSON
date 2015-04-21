@@ -43,16 +43,16 @@ $.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
     var html = points.HTML;
     var css = points.CSS;
     var design = points.Design;
-    var javascript = points.Javascript;
+    var javascript = points.JavaScript;
     var ruby = points.Ruby;
     var php = points.PHP;
-    var wordpress = points.Wordpress;
+    var wordpress = points.WordPress;
     var ios = points.iOS;
     var android = points.Android;
     var dev_tools = points["Development Tools"];
     var business = points.Business;
     var python = points.Python;
-    var java_points = points.java;
+    var java_points = points.Java;
     var digital_lit = points["Digital Literacy"];
 
 /* ------------------------------------------------ */
