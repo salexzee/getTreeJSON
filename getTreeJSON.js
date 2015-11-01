@@ -1,5 +1,5 @@
 /* In the getJSON function, change the username from "username" to whatever your Treehouse username is. */
-$.getJSON("http://teamtreehouse.com/username.json",function(treehouse){
+$.getJSON("https://teamtreehouse.com/username.json",function(treehouse){
     /* CREATING MAIN VARIABLES */
     var name = treehouse.name; /* Gets your actual name */
     var profile = treehouse.profile_name; /* Gets your user name */
